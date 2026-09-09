@@ -1,0 +1,749 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#183e31">
+  <meta name="description" content="环保牌：在五轮卡牌决策中，找到环境与发展的平衡。">
+  <title>环保牌 · 三木森环保协会</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23183e31'/%3E%3Cpath d='M17 44C11 21 32 15 49 14c-1 20-7 36-26 31L40 24z' fill='%23d5e4ad'/%3E%3C/svg%3E">
+  <style>
+@charset "UTF-8";
+:root{--bg:#f4f5ed;--paper:#fffef9;--ink:#213d32;--muted:#7d897c;--line:#e2e6d9;--green:#244d39;--lime:#d4e6ab;--pollution:#ab7157;--environment:#5d858d;--governance:#648958;--radius:18px;font-family:"Segoe UI","Microsoft YaHei","PingFang SC",sans-serif;color:var(--ink);background:var(--bg);font-synthesis:none}
+*{box-sizing:border-box}body{margin:0}button,a{-webkit-tap-highlight-color:transparent}button{font:inherit;cursor:pointer}button:disabled{cursor:default}button:focus-visible,a:focus-visible{outline:3px solid #a5bf70;outline-offset:4px}svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}.svg-library{position:absolute;width:0;height:0;overflow:hidden}[hidden]{display:none!important}h1,h2,h3,p{margin:0}h2{font-size:15px}h3{font-size:14px}a{color:inherit;text-decoration:none}.app-shell{max-width:1400px;margin:0 auto;padding:0 44px}.header{height:89px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line)}.brand{display:flex;align-items:center;gap:11px;font-size:21px;font-weight:700;letter-spacing:1px}.brand-mark{width:40px;height:40px;background:var(--ink);color:#e0ecc6;border-radius:12px;display:grid;place-items:center}.brand-mark svg{width:25px;height:25px}.version{color:var(--muted);font-size:12px;vertical-align:middle;letter-spacing:0;font-weight:500;margin-left:5px}.header-right{display:flex;align-items:center;gap:28px}.offline-badge{font-size:11px;color:var(--muted);letter-spacing:1px}.offline-badge i,.live-dot{width:6px;height:6px;border-radius:50%;background:#7e9b62;display:inline-block;margin-right:8px}.rules-button{background:transparent;border:1px solid #d6dccd;border-radius:8px;padding:9px 13px;display:flex;align-items:center;gap:8px;color:var(--ink);font-size:12px}.rules-button svg{width:16px;height:16px}.rules-button:hover{background:#e7ebdf}.hero{display:flex;align-items:center;justify-content:space-between;min-height:184px;position:relative}.hero-copy{padding:24px 0}.eyebrow{font-size:9px;letter-spacing:2px;font-weight:600;color:#7e906e}h1{font-size:32px;line-height:1.4;letter-spacing:1px;font-weight:600;margin:12px 0 10px}h1 span{color:#6d8756}.hero p{font-size:12px;color:var(--muted);letter-spacing:.4px}.landscape{width:360px;height:143px;stroke:none;align-self:flex-end;margin-right:24px;opacity:.9}.role-section{margin:9px 0 24px}.section-heading{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:14px}.section-heading h2{font-size:13px;font-weight:600}.section-heading>span{font-size:10px;color:var(--muted)}.roles-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.role-card{border:1px solid var(--line);border-radius:12px;background:#f9faf4;text-align:left;padding:16px;position:relative;display:flex;gap:12px;min-height:96px;color:var(--ink);transition:background .2s,border-color .2s,transform .2s}.role-card:disabled{opacity:1}.role-card:enabled:hover{border-color:#8aa673;transform:translateY(-2px);background:#fffef9}.role-icon{width:36px;height:36px;background:#e9eddf;border-radius:10px;display:grid;place-items:center;flex-shrink:0;color:#657c51}.role-card[data-role="government"] .role-icon{color:#64868b;background:#e7edeb}.role-card[data-role="residents"] .role-icon{color:#9c815a;background:#f1ebdf}.role-card[data-role="company"] .role-icon{color:#577654;background:#e4ecd9}.role-copy{min-width:0;padding-top:1px}.role-copy strong{font-size:13px;font-weight:600;display:block;margin-bottom:6px}.role-copy p{font-size:10px;color:var(--muted);line-height:1.7;padding-right:4px}.role-tag{font-size:9px;display:block;margin-top:7px;color:#92998b}.role-card.active{background:#eaf0dd;border-color:#99b477}.role-card.active .role-tag{color:#567035}.role-card.blocked{background:#f0f0e9}.role-card.blocked .role-tag{color:#a0634d}.game-layout{display:grid;grid-template-columns:minmax(0,1fr) 280px;gap:24px;align-items:start}.board-column{min-width:0}.phase-track{height:59px;display:flex;align-items:center;padding:0 17px;margin-bottom:14px;border:1px solid var(--line);border-radius:11px;background:#ecefe3}.phase-step{position:relative;flex:1;display:flex;align-items:center;gap:7px;font-size:11px;color:#89917f;white-space:nowrap}.phase-step:not(:last-child):after{content:"";width:20px;height:1px;background:#cbd3c0;margin:auto}.phase-step b{display:grid;place-items:center;font-size:10px;width:22px;height:22px;border-radius:50%;border:1px solid #c7cfbc;font-weight:500}.phase-step.current{color:var(--ink);font-weight:600}.phase-step.current b{color:#f4f8e9;background:var(--green);border-color:var(--green)}.phase-step.done b{background:#d9e3c7;color:#566e44;border-color:#d9e3c7}.phase-step svg{width:12px;height:12px}.tabletop{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;box-shadow:0 4px 22px #1f362506}.table-heading{display:flex;justify-content:space-between;align-items:center;padding:20px 23px;border-bottom:1px solid var(--line)}.table-heading>div{display:flex;align-items:center}.table-heading h2{font-size:13px}.table-heading>span{font-size:10px;color:var(--muted)}.card-section{padding:18px 23px 22px;transition:background .3s}.card-section+.card-section{border-top:1px solid #eef0e7}.card-section.current-section{background:#fafbf4}.card-section-head{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:15px}.card-section-head h3{display:flex;align-items:center;gap:8px;font-size:13px}.category-icon{display:grid;place-items:center;width:25px;height:25px;border-radius:7px}.category-icon svg{width:15px;height:15px}.category-icon.pollution{color:var(--pollution);background:#f3e7de}.category-icon.environment{color:var(--environment);background:#e6eeec}.category-icon.governance{color:var(--governance);background:#e7eedd}.category-en{font-size:8px;letter-spacing:1.3px;font-weight:400;color:#a0a798;margin-left:3px}.count-label{font-size:10px;color:var(--muted)}.card-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:11px}.card{width:100%;height:160px;min-width:0;border:0;padding:0;border-radius:10px;background:none;perspective:800px;color:var(--ink);position:relative;text-align:center}.card-inner{display:block;width:100%;height:100%;position:relative;transform-style:preserve-3d;transition:transform .43s cubic-bezier(.2,.65,.3,1)}.card.revealed .card-inner{transform:rotateY(180deg)}.card-face{position:absolute;inset:0;border-radius:10px;backface-visibility:hidden;-webkit-backface-visibility:hidden;overflow:hidden;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:15px 10px}.card-back{background:#6f8064;border:1px solid #60745a;color:#eef2e1}.card-back:before{content:"";position:absolute;inset:6px;border:1px solid #f0f5df40;border-radius:6px;pointer-events:none}.card-back:after{content:"";position:absolute;width:130px;height:130px;border:1px solid #e8efdb16;border-radius:50%;top:-77px;left:-58px;box-shadow:0 0 0 15px #e8efdb09,0 0 0 30px #e8efdb09;pointer-events:none}.card[data-kind="pollution"] .card-back{background:#93765d;border-color:#856d55}.card[data-kind="environment"] .card-back{background:#688785;border-color:#5e7b7b}.card-symbol{width:40px;height:40px;stroke-width:1.1;margin-bottom:13px}.card-back strong{font-size:13px;font-weight:500;letter-spacing:2px}.card-back small{font-size:9px;opacity:.7;margin-top:9px;letter-spacing:1px}.slot-number{position:absolute;left:14px;top:12px;font-size:8px;letter-spacing:1px;opacity:.7}.card:enabled:hover .card-back{filter:brightness(1.09)}.card:enabled:hover{box-shadow:0 6px 14px #263a2718}.card-front{transform:rotateY(180deg);background:#f5f0e6;border:1px solid #d7c6af;color:#614e3c;justify-content:space-between;padding:19px 11px 13px}.card[data-kind="environment"] .card-front{background:#ebf1ec;border-color:#bdcec4;color:#45665e}.card[data-kind="governance"] .card-front{background:#f0f3e5;border-color:#c7d5ae;color:#4b6640}.card-front .front-kind{font-size:8px;letter-spacing:1px;opacity:.6;display:flex;align-items:center;gap:4px}.front-kind svg{width:13px;height:13px}.card-front h4{font-size:13px;line-height:1.6;font-weight:600;margin:9px 0 7px;overflow-wrap:anywhere}.card-front p{font-size:10px;line-height:1.8;white-space:pre-line}.card-front .card-status{font-size:9px;opacity:.6;margin-top:5px}.card.selectable .card-front{border:1px solid #769955;background:#f3f7e9}.card.selectable .card-status{color:#3d6b28;opacity:1}.card.selected .card-front{background:#e0ebcf;border:2px solid #5d813e}.card.removed .card-front{opacity:.5;filter:grayscale(.8)}.card.removed .card-front h4{text-decoration:line-through}.card.placeholder{border:1px dashed #dce1d2;border-radius:10px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;color:#aeb6a1;background:#f6f7f0}.placeholder svg{width:28px;height:28px;opacity:.45;stroke-width:1}.placeholder span{font-size:10px}.placeholder .slot-number{top:12px;left:13px;font-size:8px}.table-footnote{padding:14px 23px;border-top:1px solid var(--line);display:flex;align-items:center;gap:7px;font-size:10px;color:#959e8b}.table-footnote svg{width:13px;height:13px}.resident-section{margin:0 23px 20px;background:#f5f0e0;padding:17px;border-radius:10px;border:1px solid #e4d8b3}.resident-section p{font-size:11px;color:#998664;line-height:1.8;margin:-4px 0 13px}.resident-section .card{height:137px}.resident-section .card-back{background:#a88f5c;border-color:#938058}.resident-section .card-front{background:#faf3df}.resident-section .question-symbol{font:36px Georgia,serif;margin-bottom:10px}.resident-section .card-back strong{font-size:10px;letter-spacing:0}.resident-section #resident-result{font-size:11px;line-height:1.8;color:#827043}.dashboard{display:flex;flex-direction:column;gap:17px}.action-panel{background:var(--ink);border-radius:var(--radius);padding:24px;color:#f2f5e7;position:relative;overflow:hidden}.action-top{display:flex;justify-content:space-between;align-items:center;font-size:10px;color:#b2c4a8}.round-label{font-family:Georgia,serif;color:#e5ebd1;font-size:15px}.round-dots{display:flex;gap:5px;margin:16px 0 26px}.round-dots span{height:3px;border-radius:3px;flex:1;background:#ffffff18}.round-dots span.current{background:#d0e49d}.round-dots span.done{background:#779968}.action-eyebrow{color:#aabd9a;font-size:10px;margin-bottom:10px}.action-panel h2{font-size:22px;font-weight:500;line-height:1.6;letter-spacing:.7px}.action-panel>p{font-size:11px;line-height:1.9;color:#b7c7ae;margin-top:12px;min-height:42px}.primary-button{border:0;width:100%;display:flex;align-items:center;justify-content:space-between;gap:8px;border-radius:8px;background:var(--lime);color:#243f29;font-size:13px;font-weight:600;padding:14px 16px;margin-top:24px;min-height:47px;transition:background .2s}.primary-button svg{width:18px;height:18px}.primary-button:hover:enabled{background:#e1f0ba}.primary-button:disabled{background:#46614d;color:#acbca0}.action-panel .action-caption{font-size:9px;text-align:center;margin-top:11px;min-height:0;color:#8fa385}.stat-panel,.history-panel{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:22px}.stat-panel .section-heading>span{font-size:8px}.stat{margin-top:23px}.stat-top{display:flex;justify-content:space-between;align-items:center}.stat-top>span:first-child{display:flex;align-items:center;gap:7px;font-size:11px}.stat-top svg{width:15px;height:15px}.pollution-stat .stat-top>span:first-child{color:#a07051}.economy-stat .stat-top>span:first-child{color:#60814d}.stat-direction{font-size:9px;color:#a4ab99}.stat-number{display:flex;align-items:baseline;justify-content:space-between;margin:9px 0}.stat-number strong{font-size:42px;line-height:1.1;font-weight:400;letter-spacing:-1px;font-variant-numeric:tabular-nums}.stat-delta{font-size:10px;color:#889579}.stat-delta.good{color:#60844b}.stat-delta.bad{color:#ac7156}.meter{height:4px;background:#f0eee4;border-radius:3px;overflow:hidden}.meter>div{height:100%;width:10%;background:#c1a085;transition:width .45s}.economy-stat .meter>div{background:#95aa76;width:40%}.health-strip{border-top:1px solid var(--line);margin-top:22px;padding-top:15px;display:flex;justify-content:space-between;align-items:center;font-size:10px;color:#8a967e}.health-strip strong{font-size:20px;color:#587341;font-weight:500;font-variant-numeric:tabular-nums}.history-chart{height:78px;display:flex;gap:10px;margin-top:25px;align-items:flex-end}.history-item{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;height:100%;font-size:8px;gap:5px;color:#9aa38e;min-width:0}.history-item .history-bar{width:100%;max-width:26px;height:4px;border-radius:4px 4px 0 0;background:#e9eddf;min-height:4px}.history-item.filled .history-bar{background:#9bb97b}.history-item.filled>strong{font-size:9px;color:#5b7545;font-weight:500}.history-item>strong{font-weight:400}.history-panel>p{font-size:9px;color:#9ca58f;margin-top:19px;text-align:center;line-height:1.7}.journal{padding:26px 0}.journal .section-heading{padding:0 3px}.journal ol{list-style:none;margin:0;padding:5px 0;max-height:192px;overflow-y:auto;scrollbar-width:thin;scrollbar-color:#cbd4be transparent}.journal li{padding:7px 12px 7px 20px;position:relative;font-size:10px;color:#87917f;line-height:1.8}.journal li:before{content:"";position:absolute;left:4px;top:14px;width:4px;height:4px;border-radius:50%;background:#b5c3a3}.journal li:last-child{color:#4f6c3e}.journal .empty-log{color:#a5ac9b!important}.timer{display:flex;align-items:center;gap:7px;position:relative;flex-wrap:wrap;margin-top:16px;font-size:10px;color:#d8e5c3}.timer>svg{width:15px;height:15px}.timer strong{font-size:23px;margin-left:auto;font-weight:400;font-variant-numeric:tabular-nums}.timer-track{height:3px;background:#ffffff16;width:100%;border-radius:2px;overflow:hidden}.timer-track>div{height:100%;background:#d5e5ac;transition:width .3s linear}.timer.urgent{color:#f3c7a1}.timer.urgent .timer-track>div{background:#e0aa7e}.final-panel{border-radius:var(--radius);background:#e9efd9;border:1px solid #c6d5ab;text-align:center;padding:25px 18px;color:#506b3f}.final-panel>svg{width:35px;height:35px;display:block;margin:0 auto 15px}.final-panel>span{font-size:10px;letter-spacing:1px}.final-panel h2{font-size:15px;margin-top:10px;font-weight:500}.final-number{font:60px Georgia,serif;margin:18px 0 3px;letter-spacing:-2px}.final-panel p{font-size:11px}.final-panel>div:last-child{border-top:1px solid #cfdabc;margin-top:18px;padding-top:15px;font-size:11px}footer{display:flex;align-items:center;justify-content:space-between;border-top:1px solid var(--line);margin-top:25px;padding:25px 0 32px;color:#9ba58f;font-size:10px}footer>span:first-child{font-weight:600;letter-spacing:1px}footer p{font-size:10px}dialog{border:1px solid #d8dfcc;border-radius:20px;background:var(--paper);color:var(--ink);width:min(620px,calc(100% - 28px));max-height:88dvh;padding:30px;box-shadow:0 20px 100px #12261540;overflow-y:auto}dialog::backdrop{background:#16302070;backdrop-filter:blur(4px)}.dialog-heading{display:flex;align-items:flex-start;justify-content:space-between;gap:12px}.dialog-heading h2{font-size:24px;margin-top:12px;font-weight:500}.icon-button{font-size:26px;border:0;background:#edf0e3;border-radius:50%;width:32px;height:32px;flex-shrink:0;color:#60714c;line-height:26px}.rules-intro{font-size:12px;line-height:1.9;color:#7d8973;margin:20px 0}.rules-steps{padding-left:25px;font-size:13px}.rules-steps li{padding-left:6px;margin:16px 0}.rules-steps li::marker{color:#91a878}.rules-steps p{color:#7b876f;font-size:11px;line-height:1.9;margin-top:5px}.rules-skills{display:grid;grid-template-columns:1fr 1fr;gap:13px;padding:17px;background:#f0f3e7;border-radius:10px;margin:23px 0}.rules-skills b{font-size:11px;font-weight:600}.rules-skills p{font-size:10px;line-height:1.8;color:#7c896c;margin-top:5px}.score-formula>b{font-size:12px}.score-formula p{font-size:11px;color:#718261;line-height:1.8;margin-top:7px}.score-formula small{display:block;font-size:9px;line-height:1.8;color:#98a087;margin-top:12px}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+@media(min-width:1500px){.app-shell{padding:0 50px}.hero{min-height:199px}.card{height:171px}.landscape{width:390px}}
+@media(max-width:1120px){.app-shell{padding:0 26px}.game-layout{grid-template-columns:minmax(0,1fr) 255px;gap:18px}.role-card{padding:13px 11px;gap:8px}.role-icon{width:30px;height:30px}.role-copy strong{font-size:11px}.role-copy p{font-size:9px}.landscape{width:280px;margin-right:0}.table-heading,.card-section{padding-left:17px;padding-right:17px}.card-grid{gap:8px}.card{height:152px}.card-front h4{font-size:11px}.card-front p{font-size:9px}.card-face{padding-left:8px;padding-right:8px}.action-panel{padding:21px}.phase-track{padding:0 11px}.phase-step{font-size:10px;gap:5px}.phase-step:not(:last-child):after{width:10px}.category-en{display:none}}
+@media(max-width:900px){.app-shell{padding:0 22px}.header{height:74px}.hero{min-height:160px}h1{font-size:27px}.landscape{width:240px}.roles-grid{grid-template-columns:repeat(2,1fr)}.role-copy strong{font-size:12px}.role-copy p{font-size:10px}.role-card{min-height:91px;padding:15px}.game-layout{grid-template-columns:minmax(0,1fr) 240px;gap:15px}.card-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.card{height:150px}.card-front h4{font-size:13px}.card-front p{font-size:10px}.phase-step{font-size:0;justify-content:center}.phase-step b{font-size:11px}.phase-step.current{font-size:10px}.phase-step:not(:last-child):after{display:none}.action-panel h2{font-size:20px}.category-en{display:none}}
+@media(max-width:650px){.app-shell{padding:0 16px}.header{height:72px}.brand{font-size:19px}.brand-mark{width:35px;height:35px}.header-right{gap:0}.offline-badge{display:none}.rules-button{font-size:11px;padding:8px 10px}.hero{min-height:177px;overflow:hidden}.hero-copy{position:relative;z-index:1;padding:25px 0}.eyebrow{font-size:8px;letter-spacing:1.2px}h1{font-size:25px;letter-spacing:0}h1 span{display:block}.hero p{font-size:10px;max-width:230px;line-height:1.8}.landscape{position:absolute;right:-50px;bottom:0;width:225px;opacity:.36}.role-section{margin:18px 0}.role-section .section-heading{gap:5px}.section-heading h2{font-size:12px}.section-heading>span{font-size:9px}.role-section .section-heading>span{max-width:130px;text-align:right;line-height:1.6}.roles-grid{gap:8px}.role-card{padding:11px 9px;gap:7px;min-height:113px}.role-copy strong{font-size:11px;line-height:1.6}.role-copy p{font-size:9px}.role-icon{width:26px;height:26px;border-radius:7px}.role-icon svg{width:17px;height:17px}.role-tag{font-size:8px}.game-layout{display:flex;flex-direction:column;gap:17px}.dashboard{display:contents}.action-panel{order:-2;width:100%;padding:20px}.action-top{font-size:10px}.round-dots{margin:12px 0 15px}.action-eyebrow{display:none}.action-panel h2{font-size:20px}.action-panel>p{font-size:11px;margin-top:7px;min-height:0}.primary-button{margin-top:16px;min-height:46px}.action-panel .action-caption{font-size:9px;margin-top:9px}.stat-panel{order:-1;width:100%;display:grid;grid-template-columns:1fr 1fr;gap:0 25px;padding:19px}.stat-panel>.section-heading{grid-column:1/-1;margin-bottom:0}.stat{margin-top:19px}.stat-number strong{font-size:33px}.stat-direction{font-size:8px}.stat-delta{font-size:9px}.health-strip{grid-column:1/-1;margin-top:16px;padding-top:10px}.health-strip strong{font-size:18px}.board-column{width:100%;order:0}.phase-track{margin-bottom:12px}.phase-step{font-size:10px;gap:5px}.phase-step:not(:last-child):after{display:block;width:6px}.table-heading{padding:17px 14px}.table-heading>span{font-size:9px}.card-section{padding:17px 14px}.card-grid{gap:10px}.card{height:171px}.card-front h4{font-size:14px}.card-front p{font-size:11px}.category-en{display:inline;font-size:7px}.count-label{font-size:9px}.table-footnote{padding:14px;font-size:9px;line-height:1.7}.journal{padding:24px 0 4px}.history-panel{width:100%;order:1}.history-chart{height:97px}.final-panel{width:100%;order:2}.resident-section{margin:0 14px 16px;padding:12px}.resident-section .card{height:146px}footer{margin-top:28px;padding:24px 0;gap:10px;flex-wrap:wrap}footer>span:last-child{display:none}footer p{font-size:9px}dialog{padding:22px}.dialog-heading h2{font-size:21px}.rules-skills{padding:14px;gap:14px}.timer{margin-top:12px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+.mobile-dock{display:none}
+@media(max-width:650px){body{padding-bottom:90px}.mobile-dock{position:fixed;bottom:0;left:0;right:0;z-index:20;display:flex;align-items:center;justify-content:space-between;gap:14px;padding:12px 16px max(12px,env(safe-area-inset-bottom));border-top:1px solid #dce3cf;background:#f9fbf2f5;backdrop-filter:blur(10px);box-shadow:0 -3px 20px #19302109}.mobile-dock>div{flex-shrink:0}.mobile-dock>div>span{font-size:10px;color:#7d8d6f;display:block}.mobile-dock strong{font-size:18px;font-weight:500;display:block;margin-top:4px;color:#496333;font-variant-numeric:tabular-nums}.mobile-dock .primary-button{width:auto;min-width:158px;margin:0;font-size:11px;padding:12px}.mobile-dock .primary-button:disabled{background:#e5ebd9;color:#91a180}.mobile-dock strong.urgent{color:#b16643}}
+.brand-copy{display:flex;flex-direction:column;align-items:flex-start;gap:5px}.brand-owner{font-size:14px;line-height:1.5;letter-spacing:1.5px;font-weight:700;color:#244d39;background:#e5edd7;border:1px solid #cbd9b7;border-radius:6px;padding:3px 10px}footer .footer-owner{font-size:13px;font-weight:600;letter-spacing:1px;color:#4c6d3c}
+@media(max-width:650px){.brand{gap:9px}.brand-copy{gap:3px}.brand-owner{font-size:12px;letter-spacing:1px;padding:3px 8px}footer .footer-owner{font-size:12px}}
+
+</style>
+</head>
+<body>
+  <svg class="svg-library" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs>
+    <symbol id="i-leaf" viewBox="0 0 24 24"><path d="M5 19C1 8 12 4 21 3c0 10-4 18-13 16M5 21 16 10"/></symbol>
+    <symbol id="i-pollution" viewBox="0 0 24 24"><path d="M3 21V10l6 3V9l6 4V6h5l1 15H3ZM6 17h1m4 0h1m5 0h1M16 3c-2 0-2-2-4-2"/></symbol>
+    <symbol id="i-environment" viewBox="0 0 24 24"><path d="M3 9h12a3 3 0 1 0-3-3M2 13h17a3 3 0 1 1-3 3M5 17h4a2 2 0 1 1-2 2"/></symbol>
+    <symbol id="i-governance" viewBox="0 0 24 24"><path d="M12 22V11M12 16C5 16 3 12 3 7c6 0 9 2 9 7M12 12c0-6 3-9 9-9 0 6-3 9-9 9M7 22h10"/></symbol>
+    <symbol id="i-residents" viewBox="0 0 24 24"><circle cx="9" cy="7" r="3"/><path d="M3 21v-3a6 6 0 0 1 12 0v3M16 4a3 3 0 0 1 0 6m2 4a5 5 0 0 1 3 5v2"/></symbol>
+    <symbol id="i-government" viewBox="0 0 24 24"><path d="m2 8 10-6 10 6H2Zm1 14h18M5 11v7m7-7v7m7-7v7M2 19h20"/></symbol>
+    <symbol id="i-company" viewBox="0 0 24 24"><path d="m12 2-5 8h3l-4 6h12l-4-6h3l-5-8Zm0 14v6M5 9l-4 7h4l-3 4h5m12-11 4 7h-4l3 4h-5"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h15m-6-6 6 6-6 6"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 6v6l4 2"/></symbol>
+    <symbol id="i-book" viewBox="0 0 24 24"><path d="M12 5C8 2 4 3 2 4v16c4-2 7-1 10 1 3-2 6-3 10-1V4c-2-1-6-2-10 1Zm0 0v16"/></symbol>
+    <symbol id="i-growth" viewBox="0 0 24 24"><path d="m3 17 6-6 4 4 8-10M14 5h7v7"/></symbol>
+  </defs></svg>
+
+  <div class="app-shell">
+    <header class="header">
+      <a class="brand" href="#" aria-label="环保牌首页 · 三木森环保协会"><span class="brand-mark"><svg><use href="#i-leaf"/></svg></span><span class="brand-copy"><span>环保牌</span><small class="brand-owner">三木森环保协会</small></span></a>
+      <div class="header-right"><span class="offline-badge"><i></i> 绿色决策 · 卡牌游戏</span><button class="rules-button" id="open-rules"><svg><use href="#i-book"/></svg>玩法说明</button></div>
+    </header>
+
+    <section class="hero">
+      <div class="hero-copy"><div class="eyebrow">EVERY CHOICE MAKES A DIFFERENCE</div><h1>共建一座<span>会呼吸的城市。</span></h1><p>五轮抉择，在环境与发展之间，找到你的平衡。</p></div>
+      <svg class="landscape" viewBox="0 0 430 150" fill="none" aria-hidden="true">
+        <circle cx="321" cy="48" r="31" fill="#e5c888" opacity=".65"/>
+        <path d="M2 133C68 91 101 116 167 94s89-30 155-3 84 22 108 6v53H2Z" fill="#d7dfc9"/>
+        <path d="M19 147c75-15 113-26 174-26 86 0 142 38 234 12" stroke="#92aa8a"/>
+        <g stroke="#63826b" stroke-width="1.5"><path d="M139 105V55h34v48m-24-36h5m7 0h5m-17 10h5m7 0h5m-17 10h5m7 0h5M180 102V41h34v61m-25-49h6m9 0h3m-18 11h6m9 0h3m-18 11h6m9 0h3m-18 11h6m9 0h3M221 103V65h35v47m-26-36h6m10 0h3m-19 12h6m10 0h3"/>
+        <path d="M93 119V74m-11 40 11-10 12 1m-12-17 9-9"/><path d="M94 59c-35 1-34 42-2 43 38 4 28-42 2-43Z" fill="#b7cba5"/>
+        <path d="M93 119V77m0 19 10-10m-10 4-8-9"/>
+        <path d="m294 119 1-36m-20 20 19-39 20 39h-39Zm-6 12 25-36 25 36h-50Z" fill="#a1b896"/><path d="M295 103v30"/>
+        <path d="m335 121 20-39 20 39h-40Zm-6 11 26-39 26 39h-52Z" fill="#bfd0af"/><path d="M355 121v21M35 137h56m26-16h15M325 21h11m-5-5v10"/>
+        </g>
+      </svg>
+    </section>
+
+    <section class="role-section" aria-labelledby="roles-title"><div class="section-heading"><h2 id="roles-title">每个角色，都有改变的力量</h2><span id="skill-limit">身份技能 · 每轮限用 1 个</span></div><div class="roles-grid" id="roles"></div></section>
+
+    <main class="game-layout">
+      <div class="board-column">
+        <nav class="phase-track" aria-label="每轮流程" id="phase-track"></nav>
+        <section class="tabletop" aria-label="游戏牌桌">
+          <div class="table-heading"><div><span class="live-dot"></span><h2>城市决策牌桌</h2></div><span id="table-subtitle">准备开启第一轮</span></div>
+          <section class="card-section" id="section-pollution"><div class="card-section-head"><h3><span class="category-icon pollution"><svg><use href="#i-pollution"/></svg></span>污染卡 <span class="category-en">POLLUTION</span></h3><span id="count-pollution" class="count-label">每轮 2 张</span></div><div class="card-grid" id="cards-pollution"></div></section>
+          <section class="card-section" id="section-environment"><div class="card-section-head"><h3><span class="category-icon environment"><svg><use href="#i-environment"/></svg></span>环境卡 <span class="category-en">ENVIRONMENT</span></h3><span id="count-environment" class="count-label">每轮 2 张</span></div><div class="card-grid" id="cards-environment"></div></section>
+          <section class="resident-section" id="resident-section" hidden><div class="card-section-head"><h3>居民行动 · 随机移除</h3><span class="count-label">点击任意一张</span></div><p>已抽取的污染卡与环境卡已盖背打乱。选择一张，使它的效果失效。</p><div class="card-grid" id="resident-cards"></div><div id="resident-result" role="status"></div></section>
+          <section class="card-section" id="section-governance"><div class="card-section-head"><h3><span class="category-icon governance"><svg><use href="#i-governance"/></svg></span>治理卡 <span class="category-en">GOVERNANCE</span></h3><span id="count-governance" class="count-label">抽 3 张 · 选 1 张</span></div><div class="card-grid" id="cards-governance"></div></section>
+          <div class="table-footnote"><svg><use href="#i-leaf"/></svg> 点击哪张，翻开哪张。每一次选择，都在原位发生。</div>
+        </section>
+        <section class="journal"><div class="section-heading"><h2>城市行动记录</h2><span>记录每一次改变</span></div><ol id="logs"><li class="empty-log">牌桌已就绪，等待你的第一步。</li></ol></section>
+      </div>
+
+      <aside class="dashboard" aria-label="本局状态">
+        <section class="action-panel"><div class="action-top"><span>本轮进程</span><span class="round-label" id="round-label">准备 / 05</span></div><div class="round-dots" id="round-dots"></div><div class="action-eyebrow" id="action-eyebrow">让改变发生</div><h2 id="phase-title">城市的未来，由你决定</h2><p id="phase-hint">从两张污染卡开始，观察环境变化，携手不同角色，选出本轮治理方案。</p><div class="timer" id="timer" hidden><svg><use href="#i-clock"/></svg><span>讨论倒计时</span><strong id="time-left">45</strong><span>秒</span><div class="timer-track"><div id="timer-fill"></div></div></div><button class="primary-button" id="next-button"><span>开始游戏</span><svg><use href="#i-arrow"/></svg></button><p class="action-caption" id="action-caption">5 轮游戏 · 每轮一次治理决策</p></section>
+        <section class="stat-panel"><div class="section-heading"><h2>城市状态</h2><span>回合结算后更新</span></div><div class="stat pollution-stat"><div class="stat-top"><span><svg><use href="#i-pollution"/></svg>污染值</span><span class="stat-direction">越低越好</span></div><div class="stat-number"><strong id="pollution-value">10</strong><span class="stat-delta" id="pollution-delta"></span></div><div class="meter"><div id="pollution-meter"></div></div></div><div class="stat economy-stat"><div class="stat-top"><span><svg><use href="#i-growth"/></svg>经济值</span><span class="stat-direction">越高越好</span></div><div class="stat-number"><strong id="economy-value">40</strong><span class="stat-delta" id="economy-delta"></span></div><div class="meter"><div id="economy-meter"></div></div></div><div class="health-strip"><span>当前健康值</span><strong id="health-value">—</strong></div></section>
+        <section class="history-panel"><div class="section-heading"><h2>健康值足迹</h2><span>5 轮记录</span></div><div class="history-chart" id="history-chart"></div><p id="history-caption">完成第一轮，留下绿色足迹。</p></section>
+        <section class="final-panel" id="final-panel" hidden aria-live="polite"><svg><use href="#i-governance"/></svg><span>五轮旅程已完成</span><h2>每一份行动，都算数。</h2><div class="final-number" id="final-health">0.0</div><p>最终健康值</p><div id="final-score"></div></section>
+      </aside>
+    </main>
+    <footer><span>环保牌</span><p class="footer-owner">三木森环保协会</p><span>共建 · 共治 · 共享</span></footer>
+  </div>
+
+  <dialog id="rules-dialog"><div class="dialog-heading"><div><span class="eyebrow">HOW TO PLAY</span><h2>一起，为城市做选择。</h2></div><button id="close-rules" class="icon-button" aria-label="关闭玩法说明">×</button></div><p class="rules-intro">初始污染值 <b>10</b>、经济值 <b>40</b>。游戏共 <b>5 轮</b>，同一屏幕上的玩家可共同讨论。</p><ol class="rules-steps"><li><b>翻开污染卡</b><p>每轮随机抽取 2 张。点击第几张，就在第几张的位置翻开。</p></li><li><b>观察环境变化</b><p>翻开 2 张环境卡，了解本轮的限制、增益与治理机会。</p></li><li><b>选择身份技能</b><p>默认每轮最多使用 1 个技能，也可跳过。多方协同时最多 2 个；被限制的身份无法使用技能。</p></li><li><b>做出治理决策</b><p>默认翻开 3 张治理卡，在 45 秒内点击 1 张执行。超时会自动执行牌桌左起第一张，与翻牌先后无关。</p></li></ol><div class="rules-skills" id="rules-skills"></div><div class="score-formula"><b>如何计算健康值？</b><p>最终得分 = max(100 − 污染值, 0) × 60% + 经济值 × 40%</p><p>健康值 = 最终得分 × 30%</p><small>污染值、经济值最低为 0。公司额外减污 5 先作用于累计污染；本轮增减随后结算。政府和经济腾飞只翻倍正增长；两者可叠加。环保组织使用后固定抽 4 张治理卡，覆盖“方案短缺”。自然缓冲先减半，污染爆发再翻倍。</small></div><button class="primary-button" id="understand-rules"><span>了解了，回到牌桌</span><svg><use href="#i-arrow"/></svg></button></dialog>
+  <div class="mobile-dock" id="mobile-dock"><div><span id="mobile-stage">准备开始</span><strong id="mobile-timer" hidden>剩余 45 秒</strong></div><button id="mobile-next" class="primary-button"><span>开始游戏</span><svg><use href="#i-arrow"/></svg></button></div>
+  <div class="sr-only" id="announcement" role="status" aria-live="polite"></div>
+  <script>
+(function (root) {
+  "use strict";
+
+  const MAX_ROUNDS = 5;
+  const DECISION_SECONDS = 45;
+  const ROLES = {
+    residents: { name: "居民", skill: "将已抽污染 / 环境卡盖背打乱，点击 1 张移除" },
+    government: { name: "政府", skill: "本轮新增经济翻倍；负增长不触发" },
+    ngo: { name: "环保组织", skill: "治理卡抽取数变为 4 张，只能选 1 张" },
+    company: { name: "公司", skill: "本轮新增污染减半，并额外减少累计污染 5" }
+  };
+  const CARDS = {
+    pollution: [
+      { name: "乱排放污染物", pollution: 20, economy: 10, text: "污染值 +20\n经济值 +10" },
+      { name: "长期对污染不作为", pollution: 15, economy: 0, text: "污染值 +15" },
+      { name: "奢靡之风盛行", pollution: 0, economy: -15, text: "经济值 -15" },
+      { name: "错误理念误导", pollution: 10, economy: -5, text: "污染值 +10\n经济值 -5" },
+      { name: "工厂加班扩产", pollution: 10, economy: 10, text: "污染值 +10\n经济值 +10" },
+      { name: "环保设备偷工减料", pollution: 20, economy: -5, text: "污染值 +20\n经济值 -5" },
+      { name: "居民乱扔垃圾陋习", pollution: 10, economy: 0, text: "污染值 +10" }
+    ],
+    environment: [
+      { name: "政令受阻", effect: "block_government", text: "政府无法使用技能" },
+      { name: "企业停工", effect: "block_company", text: "公司无法使用技能" },
+      { name: "宣传停滞", effect: "block_ngo", text: "环保组织无法使用技能" },
+      { name: "民意沉寂", effect: "block_residents", text: "居民无法使用技能" },
+      { name: "全员受限", effect: "block_all", text: "本回合无法使用技能" },
+      { name: "自然缓冲", effect: "next_pollution_half", text: "下个回合污染卡新增污染减半" },
+      { name: "污染爆发", effect: "pollution_double", text: "该轮污染卡新增污染翻倍" },
+      { name: "经济腾飞", effect: "economy_double", text: "本回合最终新增经济翻倍" },
+      { name: "多方协同", effect: "extra_skill", text: "本回合最多使用 2 个技能" },
+      { name: "方案短缺", effect: "governance_minus_one", text: "治理卡抽取数量 -1" }
+    ],
+    governance: [
+      { name: "强力措施", pollution: -15, economy: -15, text: "污染值 -15\n经济值 -15" },
+      { name: "中庸措施", pollution: -5, economy: -5, text: "污染值 -5\n经济值 -5" },
+      { name: "碌碌无为", pollution: 0, economy: 0, text: "保持不变" },
+      { name: "环境为主", pollution: -10, economy: 0, text: "污染值 -10" },
+      { name: "经济为主", pollution: 0, economy: 10, text: "经济值 +10" },
+      { name: "温和治污", pollution: -10, economy: -5, text: "污染值 -10\n经济值 -5" },
+      { name: "绿色产业", pollution: -5, economy: 10, text: "污染值 -5\n经济值 +10" },
+      { name: "全面整改", pollution: -20, economy: -20, text: "污染值 -20\n经济值 -20" }
+    ]
+  };
+  Object.values(ROLES).forEach(Object.freeze);
+  Object.freeze(ROLES);
+  Object.values(CARDS).forEach(cards => { cards.forEach(Object.freeze); Object.freeze(cards); });
+  Object.freeze(CARDS);
+  const kindNames = { pollution: "污染", environment: "环境", governance: "治理" };
+  const signed = value => value > 0 ? "+" + value : String(value);
+
+  class EcoGame {
+    constructor({ random = Math.random, now = Date.now } = {}) {
+      this.random = random;
+      this.now = now;
+      this._initialize();
+    }
+
+    _initialize() {
+      this.state = {
+        round: 0, pollution: 10, economy: 40, phase: "setup",
+        slots: { pollution: [], environment: [], governance: [] },
+        activeSkills: [], blockedRoles: [], maxSkills: 1, governanceDrawCount: 3,
+        residentRemoving: false, residentChoices: [], residentRemoved: null,
+        pendingNextPollutionHalf: false, naturalBuffer: false,
+        pollutionDouble: false, economyDouble: false, environmentSettled: false,
+        roundPollutionFromCards: 0, roundEconomyFromCards: 0,
+        roundPollutionDelta: 0, roundEconomyDelta: 0,
+        deadline: null, timeLeft: 0, chosenGovernanceIndex: null,
+        history: [], logs: [], health: 21, score: 70
+      };
+    }
+
+    reset() {
+      this._initialize();
+      this._startRound();
+      return true;
+    }
+
+    next() {
+      const s = this.state;
+      if (s.residentRemoving) return false;
+      switch (s.phase) {
+        case "setup": case "summary": this._startRound(); break;
+        case "game_over": return this.reset();
+        case "pollution":
+          s.phase = "environment_draw";
+          s.slots.environment = this._makeSlots("environment", 2);
+          this._log("点击 2 张环境卡背，按自己的顺序翻开。");
+          break;
+        case "environment":
+          s.phase = "skill";
+          this._log("请选择身份技能，也可以直接抽取治理卡。");
+          break;
+        case "skill":
+          this._settleEnvironment();
+          s.phase = "governance_draw";
+          s.slots.governance = this._makeSlots("governance", s.governanceDrawCount);
+          this._log("点击 " + s.governanceDrawCount + " 张治理卡背，全部翻开后选择 1 张执行。");
+          break;
+        default: return false;
+      }
+      return true;
+    }
+
+    reveal(kind, index) {
+      const s = this.state;
+      if (!Object.prototype.hasOwnProperty.call(CARDS, kind) || s.phase !== kind + "_draw") return false;
+      const slots = s.slots[kind];
+      if (!this._validIndex(slots, index) || slots[index].revealed || slots[index].removed) return false;
+      // Cards are assigned to fixed slots at draw time; reveal never shifts the array.
+      const slot = slots[index];
+      slot.revealed = true;
+      this._log("翻开第 " + (index + 1) + " 张" + kindNames[kind] + "卡「" + slot.card.name + "」：" + slot.card.text.replace(/\n/g, "，") + "。");
+      if (slots.every(item => item.revealed)) {
+        if (kind === "pollution") {
+          s.phase = "pollution";
+          this._recalculatePollution();
+          if (s.naturalBuffer) this._log("自然缓冲生效：本轮污染卡新增污染减半。");
+          this._log("污染卡合计：污染 " + signed(s.roundPollutionFromCards) + "，经济 " + signed(s.roundEconomyFromCards) + "。");
+        } else if (kind === "environment") {
+          s.phase = "environment";
+          this._previewLimits();
+          this._log("环境卡已全部翻开，可以进入身份技能选择。");
+        } else {
+          s.phase = "governance";
+          s.deadline = this.now() + DECISION_SECONDS * 1000;
+          s.timeLeft = DECISION_SECONDS;
+          this._log("治理卡已全部翻开，请在 45 秒内选择 1 张；超时自动执行第一张。");
+        }
+      }
+      return true;
+    }
+
+    canUseSkill(roleId) {
+      const s = this.state;
+      return Object.prototype.hasOwnProperty.call(ROLES, roleId) &&
+        s.phase === "skill" && !s.residentRemoving &&
+        s.activeSkills.length < s.maxSkills &&
+        !s.activeSkills.includes(roleId) && !s.blockedRoles.includes(roleId);
+    }
+
+    useSkill(roleId) {
+      if (!this.canUseSkill(roleId)) return false;
+      const s = this.state;
+      if (roleId === "residents") {
+        const choices = [];
+        for (const kind of ["pollution", "environment"]) {
+          for (const slot of s.slots[kind]) {
+            if (slot.revealed && !slot.removed) choices.push({ kind, slotId: slot.id, card: slot.card });
+          }
+        }
+        if (!choices.length) return false;
+        s.residentChoices = this._shuffle(choices);
+        s.residentRemoving = true;
+        this._log("居民技能发动：已将污染 / 环境卡背面打乱，请点击 1 张移除。");
+      } else {
+        this._log("已使用「" + ROLES[roleId].name + "」技能。");
+      }
+      s.activeSkills.push(roleId);
+      return true;
+    }
+
+    removeResident(index) {
+      const s = this.state;
+      if (s.phase !== "skill" || !s.residentRemoving || !this._validIndex(s.residentChoices, index)) return false;
+      const choice = s.residentChoices[index];
+      const slot = s.slots[choice.kind].find(item => item.id === choice.slotId);
+      if (!slot || slot.removed) return false;
+      slot.removed = true;
+      s.residentRemoved = choice;
+      s.residentRemoving = false;
+      s.residentChoices = [];
+      if (choice.kind === "pollution") this._recalculatePollution();
+      this._previewLimits();
+      this._log("居民翻开并移除「" + choice.card.name + "」：此卡及其效果不再结算。");
+      return true;
+    }
+
+    chooseGovernance(index) {
+      const s = this.state;
+      if (s.phase !== "governance" || !this._validIndex(s.slots.governance, index)) return false;
+      if (this.now() >= s.deadline) {
+        this._log("讨论时间结束，自动执行第一张治理卡。");
+        this._applyGovernance(0);
+      } else {
+        this._applyGovernance(index);
+      }
+      return true;
+    }
+
+    tick() {
+      const s = this.state;
+      if (s.phase !== "governance") return false;
+      const remaining = Math.max(0, Math.ceil((s.deadline - this.now()) / 1000));
+      if (!remaining) {
+        this._log("讨论时间结束，自动执行第一张治理卡。");
+        this._applyGovernance(0);
+        return true;
+      }
+      if (remaining === s.timeLeft) return false;
+      s.timeLeft = remaining;
+      return true;
+    }
+
+    _startRound() {
+      const s = this.state;
+      if (s.round >= MAX_ROUNDS) return;
+      s.round += 1;
+      s.phase = "pollution_draw";
+      s.slots = { pollution: this._makeSlots("pollution", 2), environment: [], governance: [] };
+      s.activeSkills = [];
+      s.blockedRoles = [];
+      s.maxSkills = 1;
+      s.governanceDrawCount = 3;
+      s.residentRemoving = false;
+      s.residentChoices = [];
+      s.residentRemoved = null;
+      s.naturalBuffer = s.pendingNextPollutionHalf;
+      s.pendingNextPollutionHalf = false;
+      s.pollutionDouble = false;
+      s.economyDouble = false;
+      s.environmentSettled = false;
+      s.roundPollutionFromCards = 0;
+      s.roundEconomyFromCards = 0;
+      s.roundPollutionDelta = 0;
+      s.roundEconomyDelta = 0;
+      s.deadline = null;
+      s.timeLeft = 0;
+      s.chosenGovernanceIndex = null;
+      this._log("第 " + s.round + " 轮开始：点击 2 张污染卡背，点击哪张就翻开哪张。");
+    }
+
+    _previewLimits() {
+      const s = this.state;
+      const blocked = new Set();
+      s.maxSkills = 1;
+      for (const card of this._activeCards("environment")) {
+        if (card.effect === "block_all") {
+          Object.keys(ROLES).forEach(role => blocked.add(role));
+          s.maxSkills = 0;
+        } else if (card.effect.startsWith("block_")) {
+          const role = card.effect.slice(6);
+          if (Object.prototype.hasOwnProperty.call(ROLES, role)) blocked.add(role);
+        } else if (card.effect === "extra_skill" && s.maxSkills > 0) {
+          s.maxSkills = 2;
+        }
+      }
+      s.blockedRoles = Array.from(blocked);
+    }
+
+    _settleEnvironment() {
+      const s = this.state;
+      if (s.environmentSettled) return;
+      s.environmentSettled = true;
+      this._previewLimits();
+      s.governanceDrawCount = 3;
+      s.pollutionDouble = false;
+      s.economyDouble = false;
+      for (const card of this._activeCards("environment")) {
+        switch (card.effect) {
+          case "next_pollution_half": s.pendingNextPollutionHalf = true; break;
+          case "pollution_double": s.pollutionDouble = true; break;
+          case "economy_double": s.economyDouble = true; break;
+          case "governance_minus_one": s.governanceDrawCount = Math.max(1, s.governanceDrawCount - 1); break;
+        }
+      }
+      // The original NGO skill sets the total to four, including under a shortage.
+      if (s.activeSkills.includes("ngo")) s.governanceDrawCount = 4;
+      if (s.pollutionDouble && s.roundPollutionFromCards > 0) {
+        s.roundPollutionFromCards *= 2;
+        this._log("污染爆发生效：本轮污染卡新增污染翻倍。");
+      }
+      if (s.pendingNextPollutionHalf) this._log("自然缓冲已记录：下一轮污染卡新增污染减半。");
+      this._log("环境效果结算完毕：本轮抽取 " + s.governanceDrawCount + " 张治理卡。");
+    }
+
+    _recalculatePollution() {
+      const s = this.state;
+      s.roundPollutionFromCards = 0;
+      s.roundEconomyFromCards = 0;
+      for (const card of this._activeCards("pollution")) {
+        s.roundPollutionFromCards += card.pollution;
+        s.roundEconomyFromCards += card.economy;
+      }
+      if (s.naturalBuffer && s.roundPollutionFromCards > 0) {
+        s.roundPollutionFromCards = Math.round(s.roundPollutionFromCards / 2);
+      }
+    }
+
+    _applyGovernance(index) {
+      const s = this.state;
+      const card = s.slots.governance[index].card;
+      const previousPollution = s.pollution;
+      const previousEconomy = s.economy;
+      s.phase = "summary";
+      s.chosenGovernanceIndex = index;
+      s.deadline = null;
+      s.timeLeft = 0;
+      s.roundPollutionDelta = s.roundPollutionFromCards + card.pollution;
+      s.roundEconomyDelta = s.roundEconomyFromCards + card.economy;
+      if (s.activeSkills.includes("company")) {
+        if (s.roundPollutionDelta > 0) s.roundPollutionDelta = Math.round(s.roundPollutionDelta / 2);
+        s.pollution = Math.max(0, s.pollution - 5);
+        this._log("公司技能生效：正向新增污染减半，额外减少累计污染 5。");
+      }
+      if (s.activeSkills.includes("government") && s.roundEconomyDelta > 0) {
+        s.roundEconomyDelta *= 2;
+        this._log("政府技能生效：本轮新增经济翻倍。");
+      }
+      if (s.economyDouble && s.roundEconomyDelta > 0) {
+        s.roundEconomyDelta *= 2;
+        this._log("经济腾飞生效：本轮最终新增经济翻倍。");
+      }
+      s.pollution = Math.max(0, s.pollution + s.roundPollutionDelta);
+      s.economy = Math.max(0, s.economy + s.roundEconomyDelta);
+      s.score = Math.max(0, 100 - s.pollution) * 0.6 + s.economy * 0.4;
+      s.health = s.score * 0.3;
+      s.history.push({
+        round: s.round, health: s.health, score: s.score,
+        pollution: s.pollution, economy: s.economy,
+        pollutionDelta: s.pollution - previousPollution,
+        economyDelta: s.economy - previousEconomy,
+        cardName: card.name
+      });
+      this._log("执行治理卡「" + card.name + "」：累计污染变化 " + signed(s.pollution - previousPollution) + "，经济变化 " + signed(s.economy - previousEconomy) + "。");
+      if (s.round >= MAX_ROUNDS) {
+        s.phase = "game_over";
+        this._log("五轮结束：最终得分 " + s.score.toFixed(1) + "，健康值 " + s.health.toFixed(1) + "。");
+      }
+    }
+
+    _activeCards(kind) {
+      return this.state.slots[kind].filter(slot => slot.revealed && !slot.removed).map(slot => slot.card);
+    }
+
+    _validIndex(array, index) { return Number.isInteger(index) && index >= 0 && index < array.length; }
+
+    _shuffle(source) {
+      const cards = source.slice();
+      for (let i = cards.length - 1; i > 0; i -= 1) {
+        const j = Math.min(i, Math.max(0, Math.floor(this.random() * (i + 1))));
+        [cards[i], cards[j]] = [cards[j], cards[i]];
+      }
+      return cards;
+    }
+
+    _makeSlots(kind, count) {
+      return this._shuffle(CARDS[kind]).slice(0, count).map((card, index) => ({
+        id: this.state.round + "-" + kind + "-" + index,
+        card: { ...card }, revealed: false, removed: false
+      }));
+    }
+
+    _log(message) {
+      this.state.logs.push(message);
+      if (this.state.logs.length > 100) this.state.logs.shift();
+    }
+  }
+
+  EcoGame.ROLES = ROLES;
+  EcoGame.CARDS = CARDS;
+  EcoGame.MAX_ROUNDS = MAX_ROUNDS;
+  EcoGame.DECISION_SECONDS = DECISION_SECONDS;
+  if (typeof module !== "undefined" && module.exports) module.exports = EcoGame;
+  if (root) root.EcoGame = EcoGame;
+})(typeof window !== "undefined" ? window : typeof globalThis !== "undefined" ? globalThis : this);
+
+</script>
+  <script>
+(function () {
+  'use strict';
+  const game = new EcoGame();
+  const $ = (id) => document.getElementById(id);
+  const kindNames = { pollution: '污染', environment: '环境', governance: '治理' };
+  const roleIcons = { residents: 'residents', government: 'government', ngo: 'governance', company: 'company' };
+  const roleShort = {
+    residents: '盖背打乱已抽卡，随机移除 1 张',
+    government: '本轮新增经济翻倍，负增长不触发',
+    ngo: '治理卡抽取增至 4 张，仍只选 1 张',
+    company: '本轮新增污染减半，累计污染再减 5'
+  };
+  let lastRound = -1;
+  let lastLog = '';
+  let residentViewKey = '';
+  const icon = (name, className = '') => `<svg class="${className}" aria-hidden="true"><use href="#i-${name}"/></svg>`;
+  const escape = (value) => String(value).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]);
+  const signed = value => `${value > 0 ? '+' : ''}${value}`;
+  const number = value => Number(value).toFixed(1);
+
+  for (const [id, role] of Object.entries(EcoGame.ROLES)) {
+    const button = document.createElement('button');
+    button.className = 'role-card';
+    button.dataset.role = id;
+    button.innerHTML = `<span class="role-icon">${icon(roleIcons[id])}</span><span class="role-copy"><strong>${escape(role.name)}</strong><p>${escape(roleShort[id])}</p><span class="role-tag">身份阶段可使用</span></span>`;
+    button.title = role.skill;
+    button.addEventListener('click', () => {
+      if (game.useSkill(id)) {
+        render();
+        if (game.state.residentRemoving) $('resident-section').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }
+    });
+    $('roles').append(button);
+    const description = document.createElement('div');
+    description.innerHTML = `<b>${escape(role.name)}</b><p>${escape(role.skill)}</p>`;
+    $('rules-skills').append(description);
+  }
+
+  function phaseNumber(phase) {
+    if (phase.startsWith('pollution')) return 0;
+    if (phase.startsWith('environment')) return 1;
+    if (phase === 'skill') return 2;
+    if (phase.startsWith('governance')) return 3;
+    if (phase === 'summary' || phase === 'game_over') return 4;
+    return -1;
+  }
+
+  const phaseDescriptions = {
+    setup: ['让改变发生', '城市的未来，由你决定', '从两张污染卡开始，观察环境变化，携手不同角色，选出本轮治理方案。', '开始游戏', '5 轮游戏 · 每轮一次治理决策'],
+    pollution_draw: ['第一步 · 看见问题', '翻开本轮污染卡', '点击任意一张卡背，查看城市面临的挑战。两张全部翻开后继续。', '请翻开污染卡', '点击哪张，就在原位翻开哪张'],
+    pollution: ['第一步 · 已完成', '了解挑战，再看环境', '污染卡已全部翻开。本轮增减将在治理方案执行后统一结算。', '进入环境卡', '下一步 · 观察本轮环境变化'],
+    environment_draw: ['第二步 · 观察变化', '翻开本轮环境卡', '环境会带来限制，也会带来机会。翻开两张，了解本轮的特殊规则。', '请翻开环境卡', '先观察，再做决定'],
+    environment: ['第二步 · 已完成', '找到改变的伙伴', '环境卡已全部翻开。进入身份阶段，选择本轮要使用的技能。', '选择身份技能', '下一步 · 发挥不同角色的力量'],
+    skill: ['第三步 · 携手行动', '选择你的行动伙伴', '', '抽取治理卡', '技能使用后立即生效，不能撤销'],
+    governance_draw: ['第四步 · 探索方案', '翻开本轮治理卡', '按你喜欢的顺序翻开全部治理卡，然后在 45 秒内选出一张执行。', '请翻开治理卡', '全部翻开后，开始 45 秒讨论'],
+    governance: ['第四步 · 做出决策', '这一轮，你怎么选？', '点击一张已翻开的治理卡执行。倒计时结束，将自动执行左起第一张。', '请点击治理卡执行', '选定后直接结算本轮'],
+    summary: ['本轮已完成', '改变，正在发生', '', '开始下一轮', '新一轮 · 新的挑战与可能'],
+    game_over: ['五轮旅程已完成', '谢谢你，为绿色行动', '', '再玩一局', '重新开始，探索另一种可能']
+  };
+
+  function renderStatus() {
+    const s = game.state;
+    const data = [...phaseDescriptions[s.phase]];
+    if (s.phase === 'skill') {
+      data[2] = s.residentRemoving ? '居民已将卡牌盖背打乱。请在居民行动区点击一张卡，将它移除后继续。' : `点击上方身份牌使用技能。本轮最多 ${s.maxSkills} 个，已使用 ${s.activeSkills.length} 个；也可以直接抽治理卡。`;
+      data[3] = s.residentRemoving ? '请先完成居民行动' : (s.activeSkills.length ? '抽取治理卡' : '跳过技能，抽治理卡');
+    }
+    if (s.phase === 'summary' || s.phase === 'game_over') {
+      const h = s.history[s.history.length - 1];
+      if (h) data[2] = s.phase === 'summary' ? `已执行「${h.cardName}」。本轮污染 ${signed(h.pollutionDelta)}，经济 ${signed(h.economyDelta)}；健康值 ${number(h.health)}。` : `城市的最终污染值为 ${s.pollution}，经济值为 ${s.economy}。最终健康值 ${number(s.health)}。`;
+    }
+    $('action-eyebrow').textContent = data[0];
+    $('phase-title').textContent = data[1];
+    $('phase-hint').textContent = data[2];
+    $('next-button').querySelector('span').textContent = data[3];
+    $('action-caption').textContent = data[4];
+    $('next-button').disabled = s.phase.endsWith('_draw') || s.phase === 'governance' || s.residentRemoving;
+    $('mobile-next').disabled = $('next-button').disabled;
+    $('mobile-next').querySelector('span').textContent = data[3];
+    $('mobile-stage').textContent = s.round ? `第 ${s.round} / 5 轮 · ${['污染', '环境', '身份', '治理', '结算'][Math.max(0, phaseNumber(s.phase))]}` : '绿色旅程，即刻开始';
+    $('round-label').textContent = s.round ? `ROUND ${String(s.round).padStart(2, '0')} / 05` : '准备 / 05';
+    $('round-dots').innerHTML = Array.from({ length: 5 }, (_, i) => `<span class="${i + 1 < s.round || s.phase === 'game_over' ? 'done' : i + 1 === s.round ? 'current' : ''}"></span>`).join('');
+    const stage = phaseNumber(s.phase);
+    $('phase-track').innerHTML = ['污染', '环境', '身份', '治理'].map((label, i) => `<span class="phase-step ${i === stage ? 'current' : i < stage ? 'done' : ''}" ${i === stage ? 'aria-current="step"' : ''}><b>${i < stage ? icon('check') : '0' + (i + 1)}</b>${label}</span>`).join('');
+    $('table-subtitle').textContent = s.phase === 'setup' ? '准备开启第一轮' : `第 ${s.round} 轮 · ${s.phase === 'game_over' ? '游戏结束' : s.phase === 'summary' ? '结算完成' : '共同决策'}`;
+    $('skill-limit').textContent = s.phase === 'setup' ? '身份技能 · 每轮限用 1 个' : `身份技能 · 本轮已用 ${s.activeSkills.length} / ${s.maxSkills} 个`;
+    document.querySelectorAll('.role-card').forEach(button => {
+      const id = button.dataset.role;
+      const active = s.activeSkills.includes(id);
+      const blocked = s.blockedRoles.includes(id);
+      button.disabled = !game.canUseSkill(id);
+      button.classList.toggle('active', active);
+      button.classList.toggle('blocked', blocked && !active);
+      button.setAttribute('aria-pressed', String(active));
+      button.querySelector('.role-tag').textContent = active ? '✓ 本轮已使用' : blocked ? '本轮环境限制' : s.residentRemoving ? '等待居民行动完成' : s.phase === 'skill' ? (s.activeSkills.length >= s.maxSkills ? '本轮技能次数已用完' : '点击使用技能 →') : '身份阶段可使用';
+    });
+    $('pollution-value').textContent = s.pollution;
+    $('economy-value').textContent = s.economy;
+    $('pollution-meter').style.width = `${Math.min(100, s.pollution)}%`;
+    $('economy-meter').style.width = `${Math.min(100, s.economy)}%`;
+    $('pollution-meter').parentElement.title = `污染值 ${s.pollution}，参考刻度 0–100`;
+    $('economy-meter').parentElement.title = `经济值 ${s.economy}，参考刻度 0–100`;
+    $('health-value').textContent = s.history.length ? number(s.health) : '—';
+    const latest = s.history[s.history.length - 1];
+    for (const kind of ['pollution', 'economy']) {
+      const element = $(`${kind}-delta`);
+      const value = latest ? latest[`${kind}Delta`] : null;
+      element.textContent = value === null ? '' : `${s.phase === 'summary' || s.phase === 'game_over' ? '本轮' : '上轮'} ${signed(value)}`;
+      element.className = `stat-delta ${value === null || value === 0 ? '' : ((kind === 'pollution' && value < 0) || (kind === 'economy' && value > 0) ? 'good' : 'bad')}`;
+    }
+    $('final-panel').hidden = s.phase !== 'game_over';
+    $('final-health').textContent = number(s.health);
+    $('final-score').textContent = `最终得分 ${number(s.score)}`;
+    renderTimer();
+  }
+
+  function makeCard(kind, slot, index) {
+    const button = document.createElement('button');
+    button.className = 'card';
+    button.dataset.kind = kind;
+    button.dataset.slotId = slot.id;
+    button.dataset.index = index;
+    button.innerHTML = `<span class="card-inner"><span class="card-face card-back" aria-hidden="true"><span class="slot-number">${String(index + 1).padStart(2, '0')}</span>${icon(kind, 'card-symbol')}<strong>${kindNames[kind]}卡</strong><small>点击翻开</small></span><span class="card-face card-front" aria-hidden="true"></span></span>`;
+    button.addEventListener('click', () => {
+      const s = game.state;
+      const changed = kind === 'governance' && s.phase === 'governance' ? game.chooseGovernance(index) : game.reveal(kind, index);
+      if (changed) render();
+    });
+    return button;
+  }
+
+  function renderCards(kind) {
+    const s = game.state;
+    const slots = s.slots[kind];
+    const container = $(`cards-${kind}`);
+    const key = slots.length ? slots.map(slot => slot.id).join('|') : 'empty';
+    // Never sort or filter slots: a card's DOM element stays at its original index.
+    if (container.dataset.key !== key) {
+      container.replaceChildren();
+      if (!slots.length) {
+        const count = kind === 'governance' ? 3 : 2;
+        for (let i = 0; i < count; i++) {
+          const placeholder = document.createElement('div');
+          placeholder.className = 'card placeholder';
+          placeholder.innerHTML = `<span class="slot-number">${String(i + 1).padStart(2, '0')}</span>${icon(kind)}<span>${kind === 'pollution' ? '等待开始' : '等待本阶段'}</span>`;
+          container.append(placeholder);
+        }
+      } else slots.forEach((slot, index) => container.append(makeCard(kind, slot, index)));
+      container.dataset.key = key;
+    }
+    slots.forEach((slot, index) => {
+      const element = container.children[index];
+      const selecting = kind === 'governance' && s.phase === 'governance';
+      const selected = kind === 'governance' && s.chosenGovernanceIndex === index;
+      element.disabled = !!slot.removed || !(selecting || (s.phase === `${kind}_draw` && !slot.revealed));
+      element.classList.toggle('revealed', slot.revealed);
+      element.classList.toggle('removed', !!slot.removed);
+      element.classList.toggle('selectable', selecting);
+      element.classList.toggle('selected', selected);
+      const status = slot.removed ? '已被居民移除' : selected ? '✓ 本轮已执行' : selecting ? '点击执行此方案 →' : '已翻开';
+      element.setAttribute('aria-label', slot.revealed ? `第${index + 1}张${kindNames[kind]}卡：${slot.card.name}，${slot.card.text.replace(/\n/g, '，')}，${status}` : `翻开第${index + 1}张${kindNames[kind]}卡`);
+      if (slot.revealed) {
+        const face = element.querySelector('.card-front');
+        const signature = `${slot.card.name}|${status}`;
+        if (face.dataset.signature !== signature) {
+          face.innerHTML = `<span class="front-kind">${icon(kind)}${kindNames[kind]}卡 · ${String(index + 1).padStart(2, '0')}</span><span><h4>${escape(slot.card.name)}</h4><p>${escape(slot.card.text)}</p></span><span class="card-status">${status}</span>`;
+          face.dataset.signature = signature;
+        }
+      }
+    });
+    $(`section-${kind}`).classList.toggle('current-section', s.phase.startsWith(kind));
+    const revealed = slots.filter(slot => slot.revealed).length;
+    const removed = slots.filter(slot => slot.removed).length;
+    $(`count-${kind}`).textContent = slots.length ? `${revealed} / ${slots.length} 已翻开${removed ? ` · ${removed} 张已移除` : kind === 'governance' ? ' · 选 1 张执行' : ''}` : kind === 'governance' ? '抽 3 张 · 选 1 张' : '每轮 2 张';
+  }
+
+  function renderResidents() {
+    const s = game.state;
+    $('resident-section').hidden = !s.residentRemoving && !s.residentRemoved;
+    if (s.residentRemoving) {
+      const key = s.residentChoices.map(c => c.slotId).join('|');
+      if (residentViewKey !== key) {
+        $('resident-cards').replaceChildren();
+        $('resident-result').textContent = '';
+        s.residentChoices.forEach((choice, index) => {
+          const button = document.createElement('button');
+          button.className = 'card';
+          button.setAttribute('aria-label', `翻开并移除第${index + 1}张居民随机卡`);
+          button.innerHTML = `<span class="card-inner"><span class="card-face card-back" aria-hidden="true"><span class="slot-number">${String(index + 1).padStart(2, '0')}</span><span class="question-symbol">?</span><strong>翻开并移除</strong></span><span class="card-face card-front" aria-hidden="true"></span></span>`;
+          button.addEventListener('click', () => {
+            if (!game.removeResident(index)) return;
+            button.querySelector('.card-front').innerHTML = `<span class="front-kind">居民行动 · ${String(index + 1).padStart(2, '0')}</span><span><h4>${escape(choice.card.name)}</h4><p>${escape(choice.card.text)}</p></span><span class="card-status">✓ 已移除</span>`;
+            button.classList.add('revealed');
+            button.setAttribute('aria-label', `第${index + 1}张居民随机卡：${choice.card.name}，已移除`);
+            render();
+          });
+          $('resident-cards').append(button);
+        });
+        residentViewKey = key;
+      }
+    } else if (s.residentRemoved) {
+      $('resident-cards').querySelectorAll('button').forEach(button => { button.disabled = true; });
+      $('resident-result').textContent = `已移除「${s.residentRemoved.card.name}」，其卡牌及效果不再结算。`;
+    }
+  }
+
+  function renderHistory() {
+    const history = game.state.history;
+    const max = Math.max(30, ...history.map(h => h.health));
+    $('history-chart').innerHTML = Array.from({ length: 5 }, (_, i) => {
+      const h = history[i];
+      return `<div class="history-item ${h ? 'filled' : ''}" ${h ? `title="第 ${i + 1} 轮健康值 ${number(h.health)}"` : ''}><strong>${h ? number(h.health) : '—'}</strong><div class="history-bar" style="height:${h ? Math.max(4, h.health / max * 52) : 4}px"></div><span>第 ${i + 1} 轮</span></div>`;
+    }).join('');
+    $('history-caption').textContent = history.length ? `已完成 ${history.length} 轮，每一次行动都留下了足迹。` : '完成第一轮，留下绿色足迹。';
+  }
+
+  function renderLogs() {
+    const logs = game.state.logs;
+    const signature = logs.join('\n');
+    if (signature === lastLog) return;
+    $('logs').replaceChildren();
+    for (const line of logs) {
+      const item = document.createElement('li');
+      item.textContent = line;
+      $('logs').append(item);
+    }
+    if (!logs.length) $('logs').innerHTML = '<li class="empty-log">牌桌已就绪，等待你的第一步。</li>';
+    $('logs').scrollTop = $('logs').scrollHeight;
+    $('announcement').textContent = logs[logs.length - 1] || '';
+    lastLog = signature;
+  }
+
+  function renderTimer() {
+    const s = game.state;
+    $('timer').hidden = s.phase !== 'governance';
+    $('time-left').textContent = s.timeLeft;
+    $('timer-fill').style.width = `${Math.max(0, Math.min(100, s.timeLeft / 45 * 100))}%`;
+    $('timer').classList.toggle('urgent', s.timeLeft <= 10);
+    $('mobile-timer').hidden = s.phase !== 'governance';
+    $('mobile-timer').textContent = `剩余 ${s.timeLeft} 秒`;
+    $('mobile-timer').classList.toggle('urgent', s.timeLeft <= 10);
+  }
+
+  function render() {
+    if (lastRound !== game.state.round) {
+      for (const kind of Object.keys(kindNames)) $(`cards-${kind}`).dataset.key = '';
+      residentViewKey = '';
+      $('resident-cards').replaceChildren();
+      $('resident-result').textContent = '';
+      lastRound = game.state.round;
+    }
+    renderStatus();
+    Object.keys(kindNames).forEach(renderCards);
+    renderResidents();
+    renderHistory();
+    renderLogs();
+  }
+
+  function nextPhase() {
+    if (!game.next()) return;
+    render();
+    if (window.matchMedia('(max-width:650px)').matches) {
+      const target = game.state.phase === 'skill' ? $('roles-title') : $(`section-${game.state.phase.replace('_draw', '')}`);
+      if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }
+  $('next-button').addEventListener('click', nextPhase);
+  $('mobile-next').addEventListener('click', nextPhase);
+  const dialog = $('rules-dialog');
+  $('open-rules').addEventListener('click', () => dialog.showModal());
+  $('close-rules').addEventListener('click', () => dialog.close());
+  $('understand-rules').addEventListener('click', () => dialog.close());
+  dialog.addEventListener('click', event => { if (event.target === dialog) { const rect = dialog.getBoundingClientRect(); if (event.clientX < rect.left || event.clientX > rect.right || event.clientY < rect.top || event.clientY > rect.bottom) dialog.close(); } });
+  setInterval(() => {
+    const phase = game.state.phase;
+    if (game.tick()) {
+      if (game.state.phase !== phase) render();
+      else renderTimer();
+    }
+  }, 200);
+  document.addEventListener('visibilitychange', () => { if (!document.hidden && game.tick()) render(); });
+  render();
+})();
+
+</script>
+</body>
+</html>
